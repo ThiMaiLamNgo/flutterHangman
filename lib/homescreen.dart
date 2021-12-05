@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
-import 'dart:io';
-import 'dart:math';
-import 'wordsBank.dart';
+import 'dart:ui';
+//import 'wordsBank.dart';
+
+/*
+ADD SOUND AND CHECK THE CODE, BUTTON,
+HOW TO GET USER INPUT, .....
+ */
 
 void main() => runApp(HangMan());
 
@@ -12,11 +16,18 @@ class HangMan extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.grey.shade900,
-        body: SafeArea(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10.0),
-            child: HangManPage(),
+        //backgroundColor: Colors.grey.shade900,
+        body: Container(
+          decoration: BoxDecoration(
+              image: DecorationImage(
+            image: AssetImage('images/hangman_backgroundimage.PNG'),
+            fit: BoxFit.cover,
+          )),
+          child: SafeArea(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10.0),
+              child: HangManPage(),
+            ),
           ),
         ),
       ),
@@ -45,7 +56,7 @@ class _HangManPageState extends State<HangManPage> {
           child: Padding(
             padding: EdgeInsets.all(10.0),
             child: Center(
-              child: Text(
+                /*child: Text(
                 //todo the rules of the game
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -53,10 +64,12 @@ class _HangManPageState extends State<HangManPage> {
                   color: Colors.white,
                 ),
               ),
-            ),
+
+               */
+                ),
           ),
         ),
-        Expanded(child: child)
+        //Expanded(child: child)
       ],
     );
   }
@@ -72,8 +85,11 @@ List<String> wordBank = [
   'machine',
   'apple'
 ];
+/*
 void randomWord() {
   int randomNumber = Random().nextInt(wordBank.length);
   String current_word = wordBank[randomNumber];
   print(current_word);
 }
+
+ */
