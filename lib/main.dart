@@ -21,3 +21,77 @@ Additional requirements (20%) - Pick one
 •Other
 –Anything other that you might think of that would make the game more fun and engaging!
  */
+import 'package:flutter/material.dart';
+import 'package:flutter_hangman/homescreen.dart';
+
+void main() => runApp(Hangman());
+
+class Hangman extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: HangmanPage(),
+    );
+  }
+}
+
+class HangmanPage extends StatefulWidget {
+  const HangmanPage({Key? key}) : super(key: key);
+
+  @override
+  _HangmanPageState createState() => _HangmanPageState();
+}
+
+class _HangmanPageState extends State<HangmanPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text('HANGMAN GAME'),
+      ),
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('images/hangman_backgroundimage.PNG'),
+            fit: BoxFit.fill,
+          ),
+        ),
+        padding: EdgeInsets.symmetric(vertical: 50.0, horizontal: 15.0),
+        constraints: BoxConstraints.expand(),
+        child: SafeArea(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Expanded(
+                flex: 15,
+                child: Center(
+                  child: Text(
+                    'Hangman is a fun game',
+                    style: TextStyle(
+                      fontSize: 25.0,
+                    ),
+                  ),
+                ),
+              ),
+              Expanded(
+                flex: 2,
+                child: TextButton(
+                  onPressed: () {
+                    setState(() {});
+                  },
+                  style: TextButton.styleFrom(
+                      primary: Colors.white, backgroundColor: Colors.green),
+                  child: Text(
+                    'Start',
+                    style: TextStyle(fontSize: 20.0),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

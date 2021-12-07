@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:ui';
+//import 'dart:ui';
 //import 'wordsBank.dart';
 
 /*
@@ -22,7 +22,8 @@ class HangMan extends StatelessWidget {
               image: DecorationImage(
             image: AssetImage('images/hangman_backgroundimage.PNG'),
             fit: BoxFit.cover,
-          )),
+            ),
+          ),
           child: SafeArea(
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 10.0),
