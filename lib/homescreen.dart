@@ -39,8 +39,7 @@ class Homescreen extends StatelessWidget {
                 //color: Colors.blue,
                 child: Text('Exit'),
                 onPressed: () {
-                  //Navigate to Screen 2
-                  Navigator.pushNamed(context, '/second');
+                  Navigator.pushNamed(context, '/third');
                 },
               ),
             ],

@@ -30,6 +30,7 @@ import 'package:flutter/material.dart';
 import 'homescreen.dart';
 import 'startscreen.dart';
 import 'exitscreen.dart';
+import 'gamescreen.dart';
 
 void main() => runApp(MyApp());
 
@@ -49,7 +50,8 @@ class MyApp extends StatelessWidget {
         '/zero': (context) => Homescreen(),
         // When navigating to the "/second" route, build the SecondScreen widget.
         '/first': (context) => StartScreen(),
-        '/second': (context) => ExitScreen(),
+        '/second': (context) => GameScreen(),
+        '/third': (context) => ExitScreen(),
       },
     );
   }
