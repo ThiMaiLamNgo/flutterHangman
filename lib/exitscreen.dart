@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class ExitScreen extends StatelessWidget {
   @override
@@ -11,9 +12,12 @@ class ExitScreen extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(primary: Colors.blue),
-          child: Text('Go Back To Home screen'),
+          child: Text('Close app'),
           onPressed: () {
-            Navigator.pop(context);
+            SystemNavigator.pop();
+            //onPressed: ()=> exit(0),
+            //tooltip: 'Close app',
+            //Navigator.pop(context);
           },
         ),
       ),

@@ -127,7 +127,7 @@ class _HangmanPageState extends State<HangmanPage> {
 /*
 import 'package:flutter/material.dart';
 //import 'dart:ui';
-//import 'wordsBank.dart';
+//import 'wordbank.dart';
 
 /*
 ADD SOUND AND CHECK THE CODE, BUTTON,
