@@ -8,37 +8,56 @@ import 'wordbank.dart';
 class GameScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return RandomWord();
-  }
-}
-
-class RandomWord extends StatefulWidget {
-  @override
-  _RandomWordState createState() => _RandomWordState();
-}
-
-class _RandomWordState extends State<RandomWord> {
-  List<String> wordBank = [
-    'hello',
-    'letter',
-    'candy',
-    'requirement',
-    'machine',
-    'apple'
-  ];
-  @override
-  Widget build(BuildContext context) {
-    late String currentWord, displayWord;
-    void randomWord() {
-      int randomNumber = Random().nextInt(wordBank.length);
-      currentWord = wordBank[randomNumber];
-      for (int i = 0; i < wordBank.length; i++) {
-        displayWord += '_';
-      }
-    }
-
-    return Container(
-      child: Text(displayWord),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Game Screen'),
+      ),
+      body: Container(
+        child: Row(
+          children: <Widget>[
+            Expanded(
+              child: Column(
+                children: [
+                  Expanded(
+                    child: Text(
+                      'currentword',
+                    ),
+                  ),
+                  Expanded(
+                    child: Text(
+                      'display',
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: Column(
+                children: [
+                  Expanded(
+                    child: Text(
+                      'currentword',
+                    ),
+                  ),
+                  Expanded(
+                    child: Row(
+                      children: [
+                        TextField(
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            hintText: 'Enter a search term',
+                          ),
+                        ),
+                        Text(''),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
